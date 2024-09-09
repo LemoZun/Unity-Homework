@@ -7,6 +7,7 @@ public class GunController : MonoBehaviour
 {
     [SerializeField] AudioClip shotSound;
     [SerializeField] ParticleSystem muzzleFlash;
+    [SerializeField] Transform muzzlePoint;
     private void Update()
     {
         Fire();
@@ -19,8 +20,31 @@ public class GunController : MonoBehaviour
             //ÃÑ ¹ß»ç
             SoundManager.Instance.PlayGunFireSound(shotSound);
             PlayFlash();
+            Raycasting();
         }
     }
+
+    private void Raycasting()
+    {
+        RaycastHit hit;
+        if(Physics.Raycast(muzzlePoint.position,muzzlePoint.forward, out hit))
+        {
+            Debug.Log($"{hit.collider.name} ¸ÂÃã " );
+
+            PlayHitEffect(hit.point,hit.normal);
+        }
+        
+        
+
+    }
+
+    private void PlayHitEffect(Vector3 hitPosition, Vector3 hitNormal)
+    {
+        ParticleSystem effect =  Instantiate(muzzleFlash, hitPosition, Quaternion.LookRotation(hitNormal));
+        effect.Play();
+
+    }
+
 
     private void PlayFlash()
     {
@@ -34,4 +58,8 @@ public class GunController : MonoBehaviour
             muzzleFlash.Stop(); 
         }
     }
+
+
+
+
 }
