@@ -40,9 +40,12 @@ public class GunController : MonoBehaviour
 
     private void PlayHitEffect(Vector3 hitPosition, Vector3 hitNormal)
     {
-        ParticleSystem effect =  Instantiate(muzzleFlash, hitPosition, Quaternion.LookRotation(hitNormal));
+        ParticleSystem effect = Instantiate(muzzleFlash, hitPosition, Quaternion.LookRotation(hitNormal));
+        //ParticleSystem effect =  Instantiate(muzzleFlash, hitPosition, Quaternion.identity);
+
         effect.Play();
 
+        Destroy(effect.gameObject, effect.main.duration); 
     }
 
 
