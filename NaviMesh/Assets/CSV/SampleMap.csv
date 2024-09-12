@@ -1,0 +1,10 @@
+wall,wall,wall,wall,wall,wall,wall,wall,wall,wall
+wall,player,0,0,wall,0,0,0,0,wall
+wall,wall,wall,0,wall,0,,0,coin,wall
+wall,0,0,0,0,0,wall,wall,0,wall
+wall,0,0,coin,0,0,wall,0,0,wall
+wall,0,0,0,0,0,wall,coin,0,wall
+wall,0,0,0,0,0,wall,0,wall,wall
+wall,coin,wall,0,0,coin,0,0,0,wall
+wall,0,wall,0,0,0,0,0,0,wall
+wall,wall,wall,wall,wall,wall,wall,wall,wall,wall
