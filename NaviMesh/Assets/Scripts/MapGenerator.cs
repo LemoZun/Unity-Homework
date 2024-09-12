@@ -7,7 +7,7 @@ using UnityEngine.AI;
 public class MapGenerator : MonoBehaviour
 {
     [SerializeField] GameObject wallPrefab;
-    [SerializeField] GameObject coinPrefab;
+    [SerializeField] GameObject[] coinPrefabs = new GameObject[3];
     [SerializeField] GameObject playerPrefab;
     [SerializeField] GameObject planePrefab;
     [SerializeField] NavMeshSurface NavMeshSurface;
@@ -103,8 +103,9 @@ public class MapGenerator : MonoBehaviour
                 }
                 else if(_map[y, x] == "coin")
                 {
+                    int randomNum = Random.Range(0,coinPrefabs.Length);
                     position = new Vector3(y * wallSize.x - 4.5f, 0.2f, x * wallSize.y - 4.5f); // À§Ä¡¸¦ ¸ÂÃß±âÀ§ÇØ ÁÂÇ¥¿¡¼­ 4.5¸¦ »©ÁÜ
-                    GameObject coin = Instantiate(coinPrefab, position, Quaternion.identity);
+                    GameObject coin = Instantiate(coinPrefabs[randomNum], position, Quaternion.identity);
                 }
                 else if (_map[y,x] == "player")
                 {

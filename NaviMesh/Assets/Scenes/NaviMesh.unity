@@ -811,8 +811,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wallPrefab: {fileID: 8014869418095083214, guid: fa11adb73ff16c94791f8632fd682fbb,
     type: 3}
-  coinPrefab: {fileID: 6074823109009212844, guid: bc072965e07369346ac22b9b7e9f1857,
-    type: 3}
+  coinPrefabs:
+  - {fileID: 3080673766454552233, guid: 086db92abd1820d4da99c17c0de1a5ae, type: 3}
+  - {fileID: 7543397855867361012, guid: 08925dd76a337dd49ba6e408345e15f8, type: 3}
+  - {fileID: 8168983117357016202, guid: a87d7fccffdad9b429207219f12cb227, type: 3}
   playerPrefab: {fileID: 4781226592941432064, guid: 35840ad78544bd2458380ab38fe8a2e5,
     type: 3}
   planePrefab: {fileID: 2075924747023193615, guid: f54fe474aaa240c49962f845d7514975,

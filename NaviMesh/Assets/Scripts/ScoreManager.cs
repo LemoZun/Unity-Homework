@@ -21,4 +21,11 @@ public class ScoreManager : MonoBehaviour
         onScroeChanged?.Invoke();
         Debug.Log($"현재 점수 : {score}");
     }
+
+    public void AddScore(int _score)
+    {
+        score += _score;
+        onScroeChanged?.Invoke();
+        Debug.Log($"현재 점수 : {score}");
+    }
 }

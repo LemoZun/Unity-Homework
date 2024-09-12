@@ -16,6 +16,7 @@ public class ScoreView : MonoBehaviour
     }
     public void UpdateScroe()
     {
+
         scoreText.text = $"Scroe : {scoreManager.Score}";
     }
 }

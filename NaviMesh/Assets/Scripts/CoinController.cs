@@ -5,10 +5,16 @@ using UnityEngine;
 public class CoinController : MonoBehaviour
 {
     public ScoreManager scoreManager;
+    public CoinData coinData;
 
 
     private void Start()
     {
+        transform.localScale = coinData.objectSize;
+        Renderer render = GetComponent<Renderer>();
+        render.material.color = coinData.color;
+
+
         GameObject scoreManagerObject = GameObject.FindWithTag("ScoreManager");
         if(scoreManagerObject != null)
             Debug.Log($"스코어 매니저 태그 찾음 {scoreManagerObject.name}");
@@ -24,7 +30,7 @@ public class CoinController : MonoBehaviour
         if(other.gameObject.CompareTag("Player"))
         {
             Debug.Log("플레이어와 트리거됨");
-            scoreManager.AddScore();
+            scoreManager.AddScore(coinData.Score);
             Destroy(gameObject);
         }
     }
