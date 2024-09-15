@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2800411801340606843}
   - component: {fileID: 2800411801340606844}
   - component: {fileID: 2800411801340606847}
+  - component: {fileID: -7960439716578948777}
   m_Layer: 6
   m_Name: Pluto
   m_TagString: Pluto
@@ -100,7 +101,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 1.5
+  m_LinearDrag: 0.5
   m_AngularDrag: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 0}
@@ -138,3 +139,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   planetPool: {fileID: 0}
   phase: 0
+--- !u!114 &-7960439716578948777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2800411801340606840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb614bcc66e2cb4498edeb53b4beb0ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxSpeed: 2
+  orbitForce: 80
+  rb: {fileID: 0}

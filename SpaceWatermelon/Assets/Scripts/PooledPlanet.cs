@@ -6,9 +6,15 @@ public class PooledPlanet : MonoBehaviour
 {
     [SerializeField] PlanetPool planetPool;
     [SerializeField] int phase;
+    [SerializeField] Rigidbody2D rb;
     Coroutine planetLifeRoutine;
     bool hasCollided = false;
 
+
+    private void Awake()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
     private void Start()
     {
         GameObject planetPoolObject = GameObject.FindGameObjectWithTag("PlanetPool");
@@ -24,6 +30,22 @@ public class PooledPlanet : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        //가장 높은 단계의 행성끼리 충돌시 사라짐
+        if(collision.gameObject.layer == gameObject.layer && phase == planetPool.planetPool.Length-1)
+        {
+            Destroy(collision.gameObject);
+            Destroy(gameObject);
+            
+            return;
+        }
+
+        if(collision.gameObject.layer == LayerMask.NameToLayer("Earth"))
+        {
+            rb.velocity*=0.1f;
+        }
+
+
+        //다음 단계의 행성 생성
         if (collision.gameObject.layer == gameObject.layer && !hasCollided)
         {
             PooledPlanet otherPlanet = collision.gameObject.GetComponent<PooledPlanet>();
@@ -50,13 +72,13 @@ public class PooledPlanet : MonoBehaviour
         //}
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if(collision.gameObject.CompareTag("GravityZone"))
-        {
-
-        }
-    }
+    //private void OnTriggerEnter2D(Collider2D collision)
+    //{
+    //    if(collision.gameObject.CompareTag("GravityZone"))
+    //    {
+    //        Debug.Log("중력존 들어옴");
+    //    }
+    //}
 
 
 

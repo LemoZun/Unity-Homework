@@ -657,6 +657,7 @@ GameObject:
   - component: {fileID: 1540472731}
   - component: {fileID: 1540472734}
   - component: {fileID: 1540472733}
+  - component: {fileID: 1540472735}
   m_Layer: 12
   m_Name: Gravity
   m_TagString: GravityZone
@@ -759,7 +760,7 @@ PointEffector2D:
   m_ColliderMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_ForceMagnitude: -80
+  m_ForceMagnitude: -30
   m_ForceVariation: 0
   m_DistanceScale: 1
   m_ForceSource: 0
@@ -767,6 +768,22 @@ PointEffector2D:
   m_ForceMode: 0
   m_Drag: 0
   m_AngularDrag: 0
+--- !u!58 &1540472735
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1540472730}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1 &1597848057
 GameObject:
   m_ObjectHideFlags: 0
@@ -830,7 +847,7 @@ GameObject:
   - component: {fileID: 2123531589}
   - component: {fileID: 2123531588}
   - component: {fileID: 2123531587}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: RealEarth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
