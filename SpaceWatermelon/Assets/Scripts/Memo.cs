@@ -14,6 +14,7 @@ public class Memo
     // 충돌을 유지하는 도중에도 collisionEnter가 실행되는건 아닌가 최적화에 문제가 있을거같은데 싶었지만 아니라고한다
     // OnCollisionStay2D 가 따로 있었다
     // n초마다 충전되어 발사되는 형식도 구현해야한다.
+    // 심화 : 힘 조절 후 발사
 
 
 
