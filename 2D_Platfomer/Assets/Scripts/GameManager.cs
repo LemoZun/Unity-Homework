@@ -70,13 +70,7 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0f;
     }
 
-    //private void DisableClearText(Scene _scene, LoadSceneMode _mode)
-    //{
-    //    if(gameClearText != null)
-    //    {
-    //        gameClearText.enabled = false;
-    //    }
-    //}
+
     public void Restart()
     {
         Debug.Log("재시작");
@@ -87,6 +81,8 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1f;
 
     }
+
+    //TextMeshPro들 활성화 및 비활성화
     private void UpdateClearText(bool isClear)
     {
         gameClearText.SetActive(isClear);
